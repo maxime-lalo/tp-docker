@@ -1,0 +1,11 @@
+services:
+  geth:
+    build: ./geth/
+    volumes:
+      - /blockchain
+  web:
+    image: nginx
+  bdd:
+    image: mongo
+    volumes:
+      - /bdd
