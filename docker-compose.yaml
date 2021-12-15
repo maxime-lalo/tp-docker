@@ -2,7 +2,7 @@ services:
   geth:
     build: ./geth/
     volumes:
-      - /blockchain
+      - blockchain:/blockchain
     ports:
       - "8545:8545"
       - "7545:7545"
@@ -10,11 +10,14 @@ services:
     depends_on:
       bdd:
         condition: service_started
-    image: nginx
+    image: nginx:1.21.4
     ports:
       - "80:80"
       - "443:443"
   bdd:
-    image: mongo
+    image: mongo:4.2.2
     volumes:
-      - /bdd
+      - bdd:/bdd
+volumes:
+  bdd:
+  blockchain:
