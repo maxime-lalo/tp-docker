@@ -1,6 +1,6 @@
 services:
   geth:
-    build: ./geth/
+    build: ./eth-node/
     volumes:
       - blockchain:/blockchain
     ports:

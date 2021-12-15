@@ -11,5 +11,5 @@ sudo docker run -d -it --network MyBridgedNetwork --mount source=bdd,destination
 
 # Part for the ether node
 sudo docker volume create blockchain
-sudo docker build -t geth ./geth
+sudo docker build -t geth ./eth-node
 sudo docker run -d -it --network BCNetwork --mount source=blockchain,destination=/blockchain --name geth geth
